@@ -1,8 +1,7 @@
-# music_with_vue
+# music
 
 This repository is created for Complete Vue Mastery Course purposes
-
-# music
+link: https://www.udemy.com/course/complete-vue-js-developer-zero-to-mastery-vuex
 
 ## Project setup
 
