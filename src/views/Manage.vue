@@ -1,7 +1,7 @@
 <template>
   <section class="container mx-auto mt-6">
     <div class="md:grid md:grid-cols-3 md:gap-4">
-      <div class="col-span-1"><app-upload /></div>
+      <div class="col-span-1"><app-upload ref="upload" /></div>
       <div class="col-span-2">
         <div
           class="bg-white rounded border border-gray-200 relative flex flex-col"
@@ -138,6 +138,10 @@ export default {
   components: {
     AppUpload,
   },
+  /* beforeRouteLeave(to, from, next) {
+    this.$refs.upload.cancelUploads();
+    next();
+  }, */
   // eslint-disable-next-line spaced-comment
   /* beforeRouteEnter(to, from, next) {
     console.log("beforeRouteEnter", store);
