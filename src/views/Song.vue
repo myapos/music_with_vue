@@ -11,6 +11,7 @@
         type="button"
         class="z-50 h-24 w-24 text-3xl bg-white text-black rounded-full
         focus:outline-none"
+        @click.prevent="newSong(song)"
       >
         <i class="fas fa-play"></i>
       </button>
@@ -92,7 +93,7 @@
 
 <script>
 import { commentsCollection, songsCollection, auth } from "@/includes/firebase";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Song",
@@ -168,6 +169,7 @@ export default {
         });
       });
     },
+    ...mapActions(["newSong"]),
   },
   computed: {
     ...mapState(["userLoggedIn"]),
