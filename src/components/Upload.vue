@@ -57,7 +57,6 @@ export default {
     upload($event) {
       this.is_dragover = false;
 
-      console.log($event);
       const files = $event.dataTransfer
         ? [...$event.dataTransfer.files]
         : [...$event.target.files];
