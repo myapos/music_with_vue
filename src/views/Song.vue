@@ -13,7 +13,10 @@
         focus:outline-none"
         @click.prevent="newSong(song)"
       >
-        <i class="fas fa-play"></i>
+        <i
+          class="fas"
+          :class="{ 'fa-play': !playing, 'fa-pause': playing }"
+        ></i>
       </button>
       <div class="z-50 text-left ml-8">
         <!-- Song Info -->
@@ -93,7 +96,7 @@
 
 <script>
 import { commentsCollection, songsCollection, auth } from "@/includes/firebase";
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Song",
@@ -173,6 +176,7 @@ export default {
   },
   computed: {
     ...mapState(["userLoggedIn"]),
+    ...mapGetters(["playing"]),
     sortedComments() {
       return this.comments.slice().sort((a, b) => {
         if (this.sort === "1") {
