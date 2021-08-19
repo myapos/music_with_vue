@@ -102,7 +102,6 @@ export default {
         Math.round(scrollTop) + innerHeight === offsetHeight;
 
       if (bottomOfWindow) {
-        console.log("Bottom of window");
         await this.getSongs();
       }
     },

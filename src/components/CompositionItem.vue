@@ -116,8 +116,6 @@ export default {
 
   methods: {
     async edit(values) {
-      console.log("song edit");
-
       this.in_submission = true;
       this.show_alert = true;
       this.alert_variant = "bg-blue-500";
@@ -126,7 +124,6 @@ export default {
       try {
         await songsCollection.doc(this.song.docID).update(values);
       } catch (e) {
-        console.log("e", e);
         this.in_submission = false;
         this.alert_variant = "bg-red-500";
         this.alert_message = "Something went wrong! Try again later";

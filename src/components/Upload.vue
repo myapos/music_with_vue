@@ -64,7 +64,6 @@ export default {
 
       files.forEach((file) => {
         if (file.type !== "audio/mpeg") {
-          console.log("edw");
           return;
         }
 
