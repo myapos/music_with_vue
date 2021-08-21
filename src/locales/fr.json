@@ -1,0 +1,18 @@
+{
+  "home": {
+    "listen": "Écoutez de la bonne musique !"
+  },
+  "manage": {
+    "my_songs": "Mes chansons"
+  },
+  "register": {
+    "TOS": "Conditions d'utilisation",
+    "accept": "J'accepte les {0}"
+  },
+  "song": {
+    "comment_count": "Pas de commentaires | 1 commentaire | {count} commentaires"
+  },
+  "upload": {
+    "upload": "Télécharger"
+  }
+}
