@@ -123,19 +123,23 @@ export default {
       sort: "1",
     };
   },
-  async created() {
-    const docSnapshot = await songsCollection.doc(this.$route.params.id).get();
-    if (!docSnapshot.exists) {
-      this.$router.push({
-        name: "home",
-      });
-      return;
-    }
-    const { sort } = this.$route.query;
-    this.sort = sort === "1" || sort === "2" ? sort : "1";
+  async beforeRouteEnter(to, from, next) {
+    const docSnapshot = await songsCollection.doc(to.params.id).get();
+    next((vm) => {
+      if (!docSnapshot.exists) {
+        vm.$router.push({
+          name: "home",
+        });
+        return;
+      }
+      const { sort } = this.$route.query;
+      // eslint-disable-next-line no-param-reassign
+      vm.sort = sort === "1" || sort === "2" ? sort : "1";
 
-    this.song = docSnapshot.data();
-    this.getComments();
+      // eslint-disable-next-line no-param-reassign
+      vm.song = docSnapshot.data();
+      vm.getComments();
+    });
   },
   methods: {
     async addComment(values, { resetForm }) {
